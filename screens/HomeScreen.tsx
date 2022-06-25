@@ -1,13 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function HomeScreen() {
-    return (
-      <View>
-        <Text>Home</Text>
-      </View>
-    );
-  }
+export default function HomeScreen({navigation}: any) {
+  useEffect(() => {
+    console.log("Home screen");
+  }, []);
   
-  const styles = StyleSheet.create({
-  });
+  return (
+    <View>
+      <Text>Home</Text>
+      <Button 
+        title="Go to Planner" 
+        onPress={() => navigation.push("Planner")}
+      />
+    </View>
+  );
+}
+  
+const styles = StyleSheet.create({
+});
   

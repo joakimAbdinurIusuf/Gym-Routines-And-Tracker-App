@@ -6,21 +6,21 @@ import PlannerScreen from "../screens/PlannerScreen";
 const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
-    return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen 
-            name="Home"
-            component={HomeScreen}
-          />
-          <Stack.Screen 
-            name="Planner"
-            component={PlannerScreen}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
-  }
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen 
+          name="Home"
+          component={HomeScreen}
+        />
+        <Stack.Screen 
+          name="Planner"
+          component={PlannerScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
   
 
   
