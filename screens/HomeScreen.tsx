@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function HomeScreen({navigation}: NativeStackHeaderProps) {
   useEffect(() => {
-    console.log("Home screen");
+    console.log("Home screen")
+    return () => console.log("Unmounting home screen")
   }, []);
   
   return (
@@ -12,7 +13,7 @@ export default function HomeScreen({navigation}: NativeStackHeaderProps) {
       <Text>Home</Text>
       <Button 
         title="Go to Planner" 
-        onPress={() => navigation.navigate("Planner")}
+        onPress={() => navigation.navigate("Planner")} // cannot push with botton nav
       />
     </View>
   );

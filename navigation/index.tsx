@@ -3,6 +3,7 @@ import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import PlannerScreen from "../screens/PlannerScreen";
+import { Entypo } from '@expo/vector-icons';
 
 export default function Navigation() {
   return (
@@ -20,6 +21,7 @@ function RootNavigator() {
       <Stack.Screen 
         name="Root"
         component={BottomTabNavigator}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -33,10 +35,18 @@ function BottomTabNavigator() {
       <BottomTab.Screen 
         name="Home"
         component={HomeScreen}
+        options={{ 
+          tabBarIcon: () =>
+          <Entypo name="home" size={24} color="black" />
+        }}
       />
       <BottomTab.Screen 
         name="Planner"
         component={PlannerScreen}
+        options={{ 
+          tabBarIcon: () =>
+          <Entypo name="home" size={24} color="black" />
+        }}
       />
     </BottomTab.Navigator>
   );
