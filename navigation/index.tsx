@@ -36,8 +36,8 @@ function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={{ 
-          tabBarIcon: () =>
-          <Entypo name="home" size={24} color="black" />
+          tabBarIcon: ({ color, size }) =>
+          <Entypo name="home" size={size} color={color} />
         }}
       />
       <BottomTab.Screen 
@@ -45,7 +45,7 @@ function BottomTabNavigator() {
         component={PlannerScreen}
         options={{ 
           tabBarIcon: () =>
-          <Entypo name="home" size={24} color="black" />
+          <Entypo name="add-to-list" size={24} color="black" />
         }}
       />
     </BottomTab.Navigator>

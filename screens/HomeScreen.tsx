@@ -1,24 +1,33 @@
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import { useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
+import data from "../data.json";
 
 export default function HomeScreen({navigation}: NativeStackHeaderProps) {
-  useEffect(() => {
-    console.log("Home screen")
-    return () => console.log("Unmounting home screen")
-  }, []);
+
+  const renderItem = ({item}: {item: any}) => {
+    return (
+      <View>
+        <Text>{item.name}</Text>
+        <Text>{item.difficulty}</Text>
+      </View>
+    )
+  }
   
   return (
-    <View>
-      <Text>Home</Text>
-      <Button 
-        title="Go to Planner" 
-        onPress={() => navigation.navigate("Planner")} // cannot push with botton nav
+    <View style={styles.container}>
+      <FlatList // item is each element in data array, and slug is unique id
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={item => item.slug}
       />
     </View>
   );
 }
   
 const styles = StyleSheet.create({
+  container: {
+    padding: 20
+  }
 });
   
